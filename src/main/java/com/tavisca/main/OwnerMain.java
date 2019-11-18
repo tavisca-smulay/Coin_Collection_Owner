@@ -8,6 +8,7 @@ import com.tavisca.model.OwnerService;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -36,38 +37,28 @@ public class OwnerMain {
 //            }
 
             CoinCollection coinCollection = new CoinCollection();
-            coinCollection.getCoinsBasedOnCountry("India");
+            List<Coin> listBasedOnCountry = coinCollection.getCoinsBasedOnCountry("India");
 
             OwnerService ownerService = new OwnerService();
             owner = new Owner(1, "Shivani", ownerService.getBulkData());
             OwnerClient ownerClient = new OwnerClient("localhost", 9090, owner);
 
+            for(Coin coin: listBasedOnCountry) {
+                System.out.println(coin.toString());
 
+                LocalDate startDate = LocalDate.now();  // will be changed into user input
+                LocalDate endDate = LocalDate.now().plusDays(3); // will be changed into user input
 
+                System.out.println("Enter Bid Value");
+                double initialBidValue = Double.parseDouble(br.readLine());
 
-
-
-//            System.out.println();
-
-//            Scanner scanner = new Scanner(System.in);
-//
-//            LocalDate startDate = LocalDate.now();  // will be changed into user input
-//            LocalDate endDate = LocalDate.now().plusDays(3); // will be changed into user input
-//
-//            System.out.print("Enter initial Bid Value : ");
-//            double initialBidValue = scanner.nextDouble();
-
+                ownerClient.putCoinToAuction(coin, startDate, endDate, initialBidValue);
+            }
 
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-//        for (Coin coin: owner.getCoinCollection().getCoins()){
-//            System.out.println(coin);
-//        }
-
 
         //mark coin for auction
         //to know progress of the auction
