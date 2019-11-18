@@ -1,13 +1,11 @@
 package com.tavisca.main;
 
 import com.tavisca.coincollection.CoinCollection;
-import com.tavisca.model.Coin;
-import com.tavisca.model.Owner;
-import com.tavisca.model.OwnerClient;
-import com.tavisca.model.OwnerService;
+import com.tavisca.model.*;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
@@ -36,12 +34,17 @@ public class OwnerMain {
 //                    coinCollection.getCoinsBasedOnCountry()
 //            }
 
-            CoinCollection coinCollection = new CoinCollection();
-            List<Coin> listBasedOnCountry = coinCollection.getCoinsBasedOnCountry("India");
+
 
             OwnerService ownerService = new OwnerService();
             owner = new Owner(1, "Shivani", ownerService.getBulkData());
-            OwnerClient ownerClient = new OwnerClient("localhost", 9090, owner);
+            OwnerClient ownerClient = new OwnerClient("172.16.5.168", 9090, owner);
+
+
+            List<Coin> listBasedOnCountry = owner.getCoinCollection().getCoinsBasedOnCountry("India");
+            System.out.println(listBasedOnCountry);
+
+            List<AuctionCoin> auctionCoins = new ArrayList<>();
 
             for(Coin coin: listBasedOnCountry) {
                 System.out.println(coin.toString());
@@ -52,9 +55,11 @@ public class OwnerMain {
                 System.out.println("Enter Bid Value");
                 double initialBidValue = Double.parseDouble(br.readLine());
 
-                ownerClient.putCoinToAuction(coin, startDate, endDate, initialBidValue);
+                auctionCoins.add(ownerService.getAuctionCoinFromCoin(coin, startDate, endDate, initialBidValue));
+                //ownerClient.putCoinToAuction(coin, startDate, endDate, initialBidValue);
             }
 
+            ownerClient.sendAuctionCoinsToAuction(auctionCoins);
 
         } catch (IOException e) {
             e.printStackTrace();

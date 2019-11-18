@@ -1,12 +1,11 @@
 package com.tavisca.model;
 
 import java.io.BufferedOutputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.time.LocalDate;
-import java.util.Scanner;
+import java.util.List;
 
 public class OwnerClient {
 
@@ -23,6 +22,18 @@ public class OwnerClient {
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(socket.getOutputStream());
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(bufferedOutputStream);
         objectOutputStream.writeObject(auctionCoin);
+
+        objectOutputStream.close();
+        bufferedOutputStream.close();
+    }
+
+    public void sendAuctionCoinsToAuction(List<AuctionCoin> auctionCoins) throws IOException {
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(socket.getOutputStream());
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(bufferedOutputStream);
+        objectOutputStream.writeObject(auctionCoins);
+
+        objectOutputStream.close();
+        bufferedOutputStream.close();
     }
 
     public void putCoinToAuction(Coin coin, LocalDate startDate, LocalDate endDate, double initialBidValue) throws IOException {
@@ -32,4 +43,6 @@ public class OwnerClient {
 
         sendAuctionCoinToAuction(auctionCoin);
     }
+
+
 }
