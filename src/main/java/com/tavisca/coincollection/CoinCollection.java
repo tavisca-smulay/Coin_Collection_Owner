@@ -65,4 +65,10 @@ public class CoinCollection {
         this.coins = coins;
     }
 
+    @Override
+    public String toString() {
+        return "CoinCollection{" +
+                "coins=" + coins +
+                '}';
+    }
 }

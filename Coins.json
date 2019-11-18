@@ -1,0 +1,59 @@
+{
+  "coins": [
+    {
+      "country": "USA",
+      "denomination": 5,
+      "yearOfMinting": "2017",
+      "currentValue": 5.0,
+      "acquiredDate": {
+        "year": 2019,
+        "month": 11,
+        "day": 18
+      }
+    },
+    {
+      "country": "India",
+      "denomination": 5,
+      "yearOfMinting": "2019",
+      "currentValue": 5.0,
+      "acquiredDate": {
+        "year": 2019,
+        "month": 11,
+        "day": 18
+      }
+    },
+    {
+      "country": "India",
+      "denomination": 7,
+      "yearOfMinting": "2019",
+      "currentValue": 5.0,
+      "acquiredDate": {
+        "year": 2019,
+        "month": 11,
+        "day": 18
+      }
+    },
+    {
+      "country": "India",
+      "denomination": 6,
+      "yearOfMinting": "2019",
+      "currentValue": 5.0,
+      "acquiredDate": {
+        "year": 2019,
+        "month": 11,
+        "day": 18
+      }
+    },
+    {
+      "country": "India",
+      "denomination": 8,
+      "yearOfMinting": "2019",
+      "currentValue": 5.0,
+      "acquiredDate": {
+        "year": 2019,
+        "month": 11,
+        "day": 18
+      }
+    }
+  ]
+}
