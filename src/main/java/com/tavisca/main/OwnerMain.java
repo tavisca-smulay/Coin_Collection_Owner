@@ -5,10 +5,7 @@ import com.tavisca.model.*;
 
 import java.io.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class OwnerMain {
     public static void main(String[] args) {
@@ -59,9 +56,23 @@ public class OwnerMain {
                 //ownerClient.putCoinToAuction(coin, startDate, endDate, initialBidValue);
             }
 
+            ownerClient.sendOwnerIdToAuction("101");
             ownerClient.sendAuctionCoinsToAuction(auctionCoins);
 
+            HashMap<String, List<AuctionCoin>> ownersAuctionCoinsFromAuction = ownerClient.getOwnersAuctionCoinsFromAuction();
+
+            for (String ownerID: ownersAuctionCoinsFromAuction.keySet()){
+                System.out.println(ownerID);
+                for(AuctionCoin auctionCoin: ownersAuctionCoinsFromAuction.get(ownerID)){
+                    System.out.println(auctionCoin);
+                }
+            }
+
+            ownerClient.closeStreams();
+
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 

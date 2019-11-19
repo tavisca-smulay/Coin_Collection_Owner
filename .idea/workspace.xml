@@ -10,11 +10,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coins.json" beforeDir="false" afterPath="$PROJECT_DIR$/Coins.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/main/OwnerMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/main/OwnerMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/model/AuctionCoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/model/AuctionCoin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/model/OwnerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/model/OwnerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/model/OwnerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/model/OwnerClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/utility/FileCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/tavisca/utility/FileCreator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tavisca/main/OwnerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tavisca/main/OwnerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tavisca/model/AuctionCoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tavisca/model/AuctionCoin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tavisca/model/OwnerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tavisca/model/OwnerClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tavisca/model/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tavisca/model/OwnerService.java" afterDir="false" />
     </list>
@@ -126,7 +126,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
